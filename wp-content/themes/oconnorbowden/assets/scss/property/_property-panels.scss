@@ -1,0 +1,14 @@
+.property-panel {
+	> li {
+		height: 0px;
+		overflow: hidden;
+
+		&.active {
+			height: auto;
+		}
+
+		&:before {
+			display: none;
+		}
+	}
+}

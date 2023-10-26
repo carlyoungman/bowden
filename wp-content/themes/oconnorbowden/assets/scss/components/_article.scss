@@ -1,0 +1,16 @@
+article {
+	max-width: 920px;
+	margin: 0 auto;
+
+	:first-child {
+		margin-top: 0;
+	}
+
+	:last-child {
+		margin-bottom: 0;
+	}
+
+	.btn {
+		margin-top: $universal-space-l;
+	}
+}

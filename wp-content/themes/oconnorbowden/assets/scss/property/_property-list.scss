@@ -1,0 +1,388 @@
+.single-property {
+	div#content {
+		margin-top: $universal-space;
+		@include large-screen-min {
+			margin-top: $universal-space-l;
+		}
+	}
+}
+
+#property-results {
+	padding: $universal-space-xl 0px;
+	background: $background;
+}
+
+ul.properties {
+	display: flex;
+	flex-wrap: wrap;
+	gap: $universal-space-l;
+
+	> li {
+		> .type-property {
+			border: 1px solid $brand-gray;
+			padding: 0 !important;
+			overflow: hidden;
+			transition: $link-transition;
+			background: $brand-white;
+			height: 100%;
+
+			&:hover {
+				box-shadow: $box-shadow-hover;
+				transform: translate(0px, -3px);
+			}
+		}
+	}
+
+	.full-width {
+		display: flex;
+		flex-direction: column;
+
+		> div {
+			flex: 1;
+			display: flex;
+			flex-wrap: wrap;
+		}
+	}
+
+	.thumbnail {
+		border-right: 1px solid $brand-gray;
+
+		ul {
+			height: 100%;
+			width: 100%;
+
+			li {
+				padding: 0;
+				height: 100%;
+				min-height: 250px;
+				background-position: center;
+				background-size: cover;
+
+				img {
+					display: block;
+				}
+
+				&:first-of-type {
+					border-right: 1px solid $brand-white;
+					border-bottom: 1px solid $brand-gray;
+				}
+
+				&:last-of-type {
+					border-left: 1px solid $brand-white;
+					border-bottom: 1px solid $brand-gray;
+					display: none;
+					@include large-screen-min {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	.details-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.price-wrapper {
+		width: 50%;
+		padding: $universal-space;
+		transition: $link-transition;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+
+		.price {
+			display: inline-flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: space-between;
+			@extend h4;
+			margin: 0px;
+			text-transform: lowercase;
+			width: 100%;
+
+			&.per-week {
+				@extend p;
+				margin: 0px;
+			}
+
+			.price-qualifier {
+				@extend p;
+				margin: 0px;
+				font-size: 16px;
+			}
+		}
+	}
+
+	.marketing-flags {
+		width: 50%;
+		display: flex;
+		align-items: center;
+	}
+
+	.details {
+		h4 {
+			margin-top: 0;
+		}
+
+		padding: $universal-space;
+		@include large-screen-min {
+			padding: $universal-space $universal-space $universal-space 0;
+		}
+
+		.title {
+			margin-top: 0;
+			font-weight: bold;
+		}
+
+		.summary {
+			@extend p;
+			overflow: hidden;
+		}
+
+		.small-details {
+			display: flex;
+			align-items: flex-end;
+			border-top: 1px solid $brand-gray;
+			padding-top: $universal-space;
+			width: 100%;
+
+			> * {
+				flex-grow: 1;
+			}
+
+			.tenant_fee {
+				text-align: center;
+			}
+
+			.shortlist {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: flex-end;
+
+				svg {
+					width: 25px;
+					height: 25px;
+					margin-right: 5px;
+					fill: #262626;
+					display: block;
+					order: 1;
+				}
+
+				span {
+					order: 2;
+				}
+
+				&:hover {
+					svg {
+						fill: $brand-red;
+					}
+				}
+
+				&--remove {
+					svg {
+						fill: $brand-red;
+					}
+				}
+
+				&.removed {
+					fill: $brand-black !important;
+				}
+
+				&.added {
+					svg {
+						fill: $brand-red !important;
+					}
+
+					&.removed {
+						svg {
+							fill: $brand-black !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.image-count {
+		position: absolute;
+		padding: 5px 10px;
+		z-index: 1;
+		line-height: 1;
+		color: $font-light;
+		fill: $font-light;
+		background: rgba(0, 0, 0, 0.6);
+
+		> * {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		svg {
+			margin-right: 5px;
+		}
+	}
+
+	.remove-from-shortlist {
+		background: lighten($brand-red, 15%);
+		height: 100%;
+		transition: $link-transition;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		p {
+			margin: 0px;
+			padding: $universal-space 0px;
+			color: $font-light;
+		}
+
+		&:hover {
+			background: $brand-red;
+		}
+	}
+}
+
+.list-layout {
+	.properties {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+
+		> li {
+			.thumbnail {
+				li:last-of-type {
+					display: none;
+					@include large-screen-min {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+.grid-layout {
+	section#property-filter {
+		.max-width-container {
+			max-width: 100%;
+		}
+	}
+
+	section#property-results {
+		.max-width-container {
+			max-width: 100%;
+
+			.row {
+				> .col-lg-9 {
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+
+				> .col-lg-3 {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.properties {
+		display: grid;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		@include medium-screen-min {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+		@include large-screen-min {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+
+		> li {
+			@include large-screen-min {
+				.price-wrapper {
+					height: auto;
+				}
+			}
+
+			.thumbnail {
+				li {
+					min-height: 250px;
+				}
+			}
+
+			.details {
+				padding-left: $universal-space;
+				padding-top: 0;
+			}
+
+			.full-width {
+				-webkit-box-flex: 0;
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+
+			.thumbnail {
+				li:last-of-type {
+					display: none;
+				}
+			}
+		}
+
+		.price-wrapper {
+			padding: $universal-space;
+			border-right: 0;
+
+			.price {
+				&.per-week {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@each $btnColours, $value in $colours {
+	.#{$btnColours} {
+		.marketing-flags {
+			width: 50%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: flex-end;
+			padding: 7.5px $universal-space;
+			border-right: 1px solid $brand-gray;
+
+			span {
+				min-width: 115px;
+				text-align: center;
+				padding: 7.5px $universal-space;
+				background: $value;
+				color: $font-light;
+
+				&.available {
+					background: $brand-green;
+				}
+
+				&.newinstruction {
+					background-color: $brand-blue;
+				}
+
+				&.sold {
+					background-color: $brand-orange;
+				}
+
+				&.letagreed {
+					background-color: $brand-orange;
+				}
+
+				&.soldstc {
+					background-color: $brand-purple;
+				}
+
+				&.forsale {
+					background-color: $brand-green;
+				}
+			}
+		}
+	}
+}

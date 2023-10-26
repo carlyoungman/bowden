@@ -1,0 +1,173 @@
+.more-property-actions {
+	li {
+		border-bottom: 1px solid $brand-gray;
+
+		&:last-of-type {
+			border-bottom: 1px solid $brand-white;
+		}
+
+		.shortlist {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+
+			svg {
+				fill: #262626;
+				display: block;
+				order: 1;
+			}
+
+			span {
+				order: 2;
+			}
+
+			&:hover {
+				svg {
+					fill: $brand-red;
+				}
+			}
+
+			&--remove {
+				svg {
+					fill: $brand-red;
+				}
+			}
+
+			&.removed {
+				fill: $brand-black !important;
+			}
+
+			&.added {
+				svg {
+					fill: $brand-red !important;
+				}
+
+				&.removed {
+					svg {
+						fill: $brand-black !important;
+					}
+				}
+			}
+		}
+
+		svg {
+			width: 25px;
+			height: 25px;
+			position: absolute;
+			left: 15px;
+			fill: $brand-black;
+			@include vertical-align;
+		}
+
+		a {
+			padding: $universal-space-l 0;
+			position: relative;
+			display: flex;
+			align-items: center;
+			text-indent: calc(25px + 30px);
+
+			&.button {
+				padding: $universal-space 0;
+				margin: 0px;
+
+				svg {
+					fill: $brand-white;
+				}
+			}
+
+			&.active {
+				background: darken($brand-white, 5%);
+			}
+		}
+
+		&:hover {
+			a {
+				background: darken($brand-white, 5%);
+			}
+		}
+
+		&.drop-down {
+			> div {
+				display: none;
+				margin: $universal-space-l 0;
+			}
+
+			> form {
+				display: none;
+				margin: $universal-space-l 0;
+			}
+
+			label {
+				width: 100%;
+				display: block;
+			}
+
+			input {
+				width: 100%;
+				margin-bottom: $universal-space;
+			}
+
+			input[type='checkbox'] {
+				width: auto;
+			}
+
+			button {
+				@include formBtn;
+				border-radius: $border-radius;
+			}
+		}
+	}
+}
+
+.view-short-list {
+	padding: $universal-space $universal-space-l;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	position: fixed;
+	bottom: $universal-space;
+	right: $universal-space;
+	transition: $global-transition;
+	text-indent: calc(25px + 15px);
+	color: $font-light;
+	display: none;
+	@include large-screen-min {
+		display: flex;
+	}
+
+	.view-short-inner {
+		position: relative;
+
+		.icon {
+			width: 25px;
+			height: 25px;
+			left: 0;
+			fill: white;
+			@include vertical-align;
+			position: absolute;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	transform: translate(0%) translateZ(200%);
+	transform: translate3d(0%, 200%, 0);
+
+	&.show {
+		transform: translate(0%) translateZ(0%);
+		transform: translate3d(0%, 0%, 0);
+	}
+}
+
+@each $btnColours, $value in $colours {
+	.#{$btnColours} {
+		.view-short-list {
+			background: $value;
+
+			&:hover {
+				background: darken($value, 10%);
+			}
+		}
+	}
+}

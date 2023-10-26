@@ -1,0 +1,66 @@
+.property-panel {
+	margin-top: $universal-space;
+}
+
+.property-information {
+	@extend .p;
+
+	.property-panel {
+		li {
+			> div {
+				padding: $universal-space 0;
+				max-width: 720px;
+			}
+
+			ul {
+			}
+		}
+	}
+
+	.images {
+		padding: 0;
+
+		ul {
+			padding: 0;
+
+			li {
+				margin: 0;
+
+				&:before {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.property-panel {
+		ul {
+			display: flex;
+			flex-wrap: wrap;
+
+			> li {
+				margin: 10px $universal-space;
+				position: relative;
+				text-indent: 20px;
+
+				&:before {
+					@include after;
+					@include vertical-align;
+					width: 10px;
+					height: 10px;
+					border-radius: $border-radius;
+
+					left: 0;
+				}
+			}
+		}
+	}
+}
+
+.panel-slides {
+	img {
+		max-width: 600px;
+		display: block;
+		margin: 0 auto;
+	}
+}

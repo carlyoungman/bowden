@@ -1,0 +1,99 @@
+.btn,
+.button,
+input[type='submit'] {
+  @include formBtn;
+  border-radius: $border-radius;
+}
+
+@function set-button-text-color($color) {
+  @if (lightness($color) > 70) {
+    @return $font-dark;
+  } @else {
+    @return $font-light;
+  }
+}
+
+@each $btnColours, $value in $colours {
+  .btn {
+    &.btn-#{$btnColours} {
+      background: $value;
+      border: 2px solid $value;
+      color: set-button-text-color($value);
+
+
+      &:focus,
+      &:hover {
+        background-color: darken($value, 10%);
+        border-color: darken($value, 10%);
+        color: set-button-text-color($value);
+
+        svg {
+          fill: set-button-text-color($value);
+        }
+      }
+    }
+  }
+}
+
+@each $btnColours, $value in $colours {
+  .btn {
+    &.border-#{$btnColours} {
+      background-color: transparent;
+      border: 2px solid $value;
+      color: $font-light;
+
+      &:focus,
+      &:hover {
+        background-color: $value;
+        border-color: $value;
+        color: set-button-text-color($value);
+
+        svg {
+          fill: set-button-text-color($value);
+        }
+      }
+    }
+
+    svg {
+      transition: $link-transition;
+    }
+  }
+}
+
+.brochure {
+  width: auto;
+  position: fixed;
+  bottom: 0px;
+  right: $universal-space;
+  display: none;
+  transition: $global-transition;
+
+  @include large-screen-min {
+    display: block;
+    -webkit-transform: translateY(150%);
+    transform: translateY(150%);
+  }
+
+  &.loaded {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+.post-type-archive-property {
+  .brochure {
+    display: none;
+  }
+
+  &.residential-lettings {
+    #rental {
+      display: block;
+    }
+  }
+
+  &.residential-sales {
+    #sales {
+      display: block;
+    }
+  }
+}

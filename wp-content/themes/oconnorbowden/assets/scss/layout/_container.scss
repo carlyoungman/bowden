@@ -1,0 +1,48 @@
+.max-width-container {
+	box-sizing: content-box;
+	max-width: 1380px;
+	margin: 0 auto;
+}
+
+main#main {
+	padding-top: 0px;
+	@include large-screen-min {
+		padding-top: 95px;
+	}
+}
+
+@each $btnColours, $value in $colours {
+	.spacer {
+		margin: $universal-space-xl 0px;
+		@include large-screen-min {
+			margin: $universal-space-xxl 0px;
+		}
+
+		&--has-background {
+			padding: $universal-space-l 0px;
+			@include large-screen-min {
+				padding: $universal-space-xl 0px;
+			}
+		}
+
+		&.background-#{$btnColours} {
+			background: $value;
+			border: 2px solid $value;
+
+			margin: 0;
+			padding: $universal-space-xl 0px;
+
+			@include large-screen-min {
+				padding: $universal-space-xxl 0px;
+			}
+		}
+	}
+}
+
+.page-template-template-contact {
+	main#main {
+		@include large-screen-min {
+			padding-top: calc(95px + 30px);
+		}
+	}
+}

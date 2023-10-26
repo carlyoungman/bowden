@@ -1,0 +1,65 @@
+.mobile-navigation {
+	position: fixed;
+	bottom: 0;
+	z-index: 10;
+	z-index: 10;
+	width: 100%;
+	background: $brand-black;
+	box-shadow: 0 -5px 30px -15px #444;
+
+	.mobile-navigation-inner {
+		position: relative;
+
+		.icon-wrapper {
+			float: right;
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+
+			li {
+				width: 50px;
+				height: 60px;
+				position: relative;
+
+				svg {
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					display: block;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+				}
+
+				&.shortlist-icon {
+					display: none;
+
+					&.show {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.logo {
+			height: 40px;
+			width: 90px;
+			position: absolute;
+			top: 50%;
+			margin-left: $universal-space;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			display: block;
+			left: $universal-space;
+			fill: $brand-white;
+		}
+	}
+}
+
+.icon-wrapper {
+	> li.active {
+		svg {
+			fill: $brand-black;
+		}
+	}
+}

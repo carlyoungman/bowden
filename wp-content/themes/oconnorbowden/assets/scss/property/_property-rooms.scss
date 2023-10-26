@@ -1,0 +1,22 @@
+ul.rooms {
+	margin-bottom: $universal-space;
+
+	li {
+		display: inline-block;
+		position: relative;
+		margin-right: $universal-space;
+		width: 50px;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 20px;
+		}
+
+		&.bathrooms {
+			svg {
+				top: -4px;
+			}
+		}
+	}
+}

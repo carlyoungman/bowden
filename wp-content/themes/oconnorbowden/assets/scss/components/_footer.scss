@@ -1,0 +1,168 @@
+footer {
+	padding: $universal-space-xl 0;
+	color: $font-light;
+	background: $brand-black;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: $font-light;
+		text-align: center;
+	}
+
+	h6 {
+		margin-top: $universal-space-xl;
+	}
+
+	.container-fluid {
+		> div {
+			margin-bottom: $universal-space-l;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.disclaimer {
+		padding: $universal-space-l 0px;
+		max-width: 920px;
+		margin: 0 auto;
+		display: block;
+	}
+
+	.social-media-links {
+		position: relative;
+		margin-bottom: $universal-space-l;
+
+		li {
+			position: relative;
+
+			.icon-button {
+				margin: 0 auto;
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	.logos {
+		> div {
+			display: flex;
+			justify-content: center !important;
+			flex-wrap: wrap;
+		}
+
+		p {
+			color: $brand-white;
+			width: 100%;
+			text-align: center;
+		}
+
+		.logo {
+			width: 100%;
+			max-width: 120px;
+			max-height: 100px;
+			display: block;
+			@include large-screen-min {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.developments {
+		column-count: 1;
+		column-gap: $universal-space;
+		text-align: center;
+
+		p {
+			color: $font-light;
+
+			span {
+				opacity: 0.5;
+			}
+		}
+
+		@include medium-screen-min {
+			column-count: 2;
+		}
+		@include large-screen-min {
+			column-count: 3;
+			text-align: left;
+		}
+	}
+
+	.copyright,
+	.builtby {
+		color: $font-light;
+		opacity: 0.5;
+	}
+
+	.contact-footer {
+		margin-top: $universal-space-xl;
+
+		.control {
+			border-bottom: 1px solid $brand-white !important;
+			font-size: $font-light;
+		}
+
+		.btn {
+			margin-top: 2px;
+		}
+	}
+
+	#latest--tweets {
+		padding-top: $universal-space-l;
+		border-top: 1px solid #fff;
+
+		ul {
+			li {
+				display: flex;
+				align-items: center;
+				margin-bottom: $universal-space-l;
+				max-width: 700px;
+				position: relative;
+
+				&:hover .date {
+					opacity: 1;
+				}
+
+				> svg {
+					margin-right: $universal-space;
+				}
+
+				> img {
+					display: inline-block;
+					width: $universal-space;
+					margin-right: 10px;
+				}
+
+				> span {
+					display: inline-block;
+					width: 100%;
+				}
+
+				a:first-child {
+					color: $white;
+				}
+
+				.date {
+					font-style: italic;
+					color: $font-light;
+					opacity: 0.5;
+				}
+
+				a {
+					color: $brand-yellow;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans');
+
+$base-font: 'Open Sans', sans-serif;
+$headline-font: 'Montserrat', sans-serif;
+@each $fontColour, $value in $colours {
+	.font-#{$fontColour} {
+		color: $value;
+	}
+}
+
+body {
+	font-family: $base-font;
+	font-size: $small-font-size;
+	line-height: $base-line-height;
+	color: $font-dark;
+	font-weight: 500;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@include medium-screen-min {
+		font-size: $medium-font-size;
+	}
+	@include large-screen-min {
+		font-size: $large-font-size;
+	}
+}
+
+.p,
+p {
+	line-height: $base-line-height;
+	color: $font-dark;
+	font-size: inherit;
+	margin-bottom: $universal-space;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $headline-font;
+	line-height: 1.6;
+	text-transform: capitalize;
+	margin-bottom: $universal-space;
+	color: $headline-dark;
+}
+
+.h1,
+h1 {
+	font-size: 3em;
+}
+
+.h2,
+h2 {
+	font-size: 2.5em;
+}
+
+.h3,
+h3 {
+	font-size: 2em;
+}
+
+.h4,
+h4 {
+	font-size: 1.5em;
+}
+
+.h5,
+h5 {
+	font-size: 1.3em;
+}
+
+.h6,
+h6 {
+	font-size: 1em;
+}
+
+/* =============================================================================
+Font Weight Helper Classes
+========================================================================== */
+.fw-normal {
+	font-weight: normal;
+}
+
+.fw-medium {
+	font-weight: 500;
+}
+
+.fw-bold {
+	font-weight: bold;
+}
+
+/* =============================================================================
+Misc
+========================================================================== */
+@mixin super-size {
+	@extend h1;
+	@include medium-screen-min {
+		font-size: 5.5vw;
+		margin-top: 0;
+	}
+}
+
+@mixin section-headline {
+	@extend h1;
+}
+
+.section-headline {
+	@include section-headline;
+}
+
+.large-text {
+	@extend h3;
+
+	p {
+		@extend h3;
+	}
+}
+
+small {
+	font-size: 11px;
+}
+
+.main-content {
+	h1 {
+		padding: $universal-space 0;
+		@include medium-screen-min {
+			width: 70%;
+			border-bottom: 1px solid #e6e6e6;
+		}
+	}
+}
+
+.font-blue {
+	color: $brand-blue;
+}
+
+.font-green {
+	color: $brand-green;
+}
+
+.section-title {
+	@include section-title;
+}

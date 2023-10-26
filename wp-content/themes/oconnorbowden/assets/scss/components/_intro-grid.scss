@@ -1,0 +1,5 @@
+#intro-grid {
+	.grid-item {
+		@include fullScreenImage;
+	}
+}

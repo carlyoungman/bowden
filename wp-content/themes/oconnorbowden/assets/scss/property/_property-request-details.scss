@@ -1,0 +1,34 @@
+.request-details {
+	padding: $universal-space;
+	margin: 0 auto $universal-space;
+	text-align: center;
+	@extend h4;
+
+	div {
+		color: $font-light;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		@include large-screen-min {
+			width: auto;
+		}
+
+		span {
+			color: $font-light;
+			margin-right: $universal-space;
+		}
+	}
+
+	.btn {
+		font-size: 0.7em;
+		min-width: 100%;
+		min-height: 50px;
+		@include large-screen-min {
+			margin: 0px;
+			margin-left: $universal-space-l;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1399 1011">
+  <defs>
+    <style>.cls-1{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#ffd300;}</style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" x="-245" y="-71" width="1644" height="1082"/>
+    </clipPath>
+  </defs>
+  <title>SVGShapes</title>
+  <g class="cls-2">
+    <polygon class="cls-3"
+             points="722.84 1378 641.02 1378 623.79 1378 541.97 1378 524.74 1378 197.92 1378 180.69 1378 98.87 1378 81.64 1378 -0.18 1378 -58 1378 -58 1153.02 -0.18 1153.02 -0.18 840.05 425.97 840.05 425.97 733.77 525.02 733.77 525.02 446.38 791.07 446.38 791.07 258.68 890.12 258.68 890.12 134.97 1132 134.97 1132 0 1290 0 1462 0 1462 1378 722.84 1378"/>
+  </g>
+</svg>

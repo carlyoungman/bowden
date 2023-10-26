@@ -1,0 +1,13 @@
+.side-panel {
+	border: 1px solid $brand-gray;
+	margin-bottom: $universal-space-l;
+	background: $brand-white;
+
+	.body {
+		padding: $universal-space;
+	}
+
+	.footer {
+		padding: $universal-space;
+	}
+}

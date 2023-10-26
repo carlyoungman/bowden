@@ -1,0 +1,32 @@
+.details-heading-top {
+	@extend .p;
+	margin: 0px;
+
+	h4,
+	h1 {
+		margin-bottom: $universal-space;
+	}
+
+	ul.rooms {
+		margin: $universal-space 0;
+	}
+
+	.price-wrapper {
+		@include large-screen-min {
+			text-align: right;
+		}
+
+		.price {
+			display: inline-block;
+			margin-right: $universal-space;
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.shortlist {
+		display: none;
+	}
+}

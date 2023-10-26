@@ -1,0 +1,109 @@
+section.property-banner {
+	background: $background;
+
+	div.property-banner {
+		background: $brand-white;
+		box-shadow: $box-shadow;
+		margin-top: $universal-space-l;
+		display: none;
+
+		h4.headline {
+			margin-top: 0;
+			margin-bottom: $universal-space;
+		}
+
+		.content-wrapper,
+		.image-wrapper {
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			padding: $universal-space-xl 0;
+			@include large-screen-min {
+				padding: $universal-space-l 0;
+			}
+		}
+
+		.content-wrapper {
+			@include large-screen-max {
+				padding: $universal-space-l;
+			}
+
+			article {
+				margin: 0;
+			}
+		}
+
+		.image-wrapper {
+			padding: $universal-space;
+			@include large-screen-max {
+				padding-bottom: 0;
+			}
+		}
+
+		.content {
+			margin-bottom: 0;
+		}
+
+		&.font-light {
+			* {
+				color: $font-light;
+			}
+		}
+	}
+}
+
+.map-layout {
+	section.property-banner {
+		display: none;
+	}
+}
+
+.residential-lettings {
+	div.property-banner#banner-for-rent {
+		display: block;
+	}
+}
+
+.residential-sales {
+	div.property-banner#banner-for-sale {
+		display: block;
+	}
+}
+
+.residential-letting-new-homes {
+	div.property-banner#banner-for-new-homes {
+		display: block;
+	}
+}
+
+.residential-lettings {
+	.marketing_flag-new-homes-for-sale {
+		display: none;
+	}
+}
+
+.marketing-flag-coming-soon {
+	div.property-banner#banner-coming-soon {
+		display: block;
+	}
+}
+
+.marketing-flag-investment {
+	div.property-banner#banner-for-investment {
+		display: block;
+	}
+}
+
+.marketing-flag-land {
+	div.property-banner#banner-for-land {
+		display: block;
+	}
+}
+
+.marketing-flag-off-plan {
+	div.property-banner#banner-for-off-plan,
+	div.property-banner#banner-for-recent-projects {
+		display: block;
+	}
+}

@@ -1,0 +1,15 @@
+.hidden-forms {
+	padding: 0px;
+
+	.panel {
+		display: none;
+		position: absolute;
+		opacity: 0;
+
+		&.open {
+			opacity: 1;
+			padding-bottom: 150px;
+			position: static;
+		}
+	}
+}

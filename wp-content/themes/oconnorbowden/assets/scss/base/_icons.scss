@@ -1,0 +1,145 @@
+$icon-size: (
+	xs: 15px,
+	s: 25px,
+	m: 35px,
+	l: 45px,
+	xl: 55px,
+);
+@each $name, $value in $icon-size {
+	.icon-#{$name} {
+		width: $value;
+		height: $value;
+	}
+}
+
+@each $iconColours, $value in $colours {
+	.icon {
+		&.icon-#{$iconColours} {
+			fill: $value;
+		}
+	}
+}
+
+.back-to-top-icon {
+	svg {
+		width: 60px;
+		height: 60px;
+		margin: 0 auto;
+		padding: $universal-space;
+		display: block;
+		border: 2px solid $brand-white;
+		fill: $brand-white;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.icon-button {
+	background: $brand-white;
+	border-radius: 200%;
+	height: 50px;
+	width: 50px;
+	transition: $link-transition;
+	box-shadow: $box-shadow;
+	@include vertical-align;
+
+	&.home-icon {
+		margin-left: 65px;
+	}
+
+	.icon {
+		position: absolute;
+		fill: inherit;
+		transition: $link-transition;
+		width: 25px;
+		height: 25px;
+		@include vertical-align;
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+	}
+}
+
+.arrow-down {
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	display: none;
+	top: calc(100% + 60px);
+	@include large-screen-min {
+		display: block;
+	}
+
+	.icon {
+		fill: $brand-white !important;
+	}
+
+	&:after {
+		width: 50px;
+		height: 50px;
+		box-sizing: border-box;
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		pointer-events: none;
+		border: 4px solid $brand-white;
+		border-radius: 50%;
+		animation-duration: 1.5s;
+		animation-name: intervalHamburgerBorder;
+		animation-iteration-count: infinite;
+		animation-delay: 1s;
+	}
+}
+
+@keyframes intervalHamburgerBorder {
+	0% {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+
+	80% {
+		-webkit-transform: scale(1.4);
+		transform: scale(1.4);
+	}
+
+	100% {
+		opacity: 0;
+		-webkit-transform: scale(1.4);
+		transform: scale(1.4);
+	}
+}
+
+@each $btnColours, $value in $colours {
+	.#{$btnColours} {
+		.arrow-down {
+			background: $value;
+		}
+
+		.icon-button {
+			.icon {
+				fill: $value;
+			}
+
+			&:hover {
+				cursor: pointer;
+
+				.icon {
+					fill: $brand-black;
+				}
+			}
+
+			&.active {
+				.icon {
+					fill: $brand-black;
+				}
+			}
+		}
+	}
+}

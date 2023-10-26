@@ -1,0 +1,349 @@
+.hero {
+	min-height: calc(100vh - 60px);
+	position: relative;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: $universal-space-xl;
+	@include large-screen-min {
+		min-height: calc(80vh);
+		margin-bottom: $universal-space-xxl;
+	}
+	@include xxLarge-screen-min {
+		min-height: calc(75vh);
+	}
+
+	&.image {
+		.content {
+			background: rgba(0, 0, 0, 0.4);
+
+			* {
+				color: $font-light;
+			}
+
+			&:before {
+				border-top: 2px solid $brand-green;
+				border-left: 2px solid $brand-green;
+			}
+
+			&:after {
+				border-bottom: 2px solid $brand-green;
+				border-right: 2px solid $brand-green;
+			}
+		}
+	}
+
+	.content {
+		padding: $universal-space-xl 90px;
+		text-align: center;
+		position: relative;
+		z-index: 5;
+
+		* {
+			color: $brand-white;
+		}
+
+		p {
+			&:last-of-type {
+				margin-bottom: 0px;
+			}
+		}
+
+		&:before {
+			content: '';
+			width: 45%;
+			height: 70%;
+			position: absolute;
+			transition: $slow-transition;
+			border-top: 2px solid $brand-white;
+			border-left: 2px solid $brand-white;
+			left: 30px;
+			top: 30px;
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		&:after {
+			content: '';
+			width: 45%;
+			height: 50%;
+			position: absolute;
+			transition: $slow-transition;
+			border-bottom: 2px solid $brand-white;
+			border-right: 2px solid $brand-white;
+			right: 30px;
+			bottom: 30px;
+			pointer-events: none;
+			z-index: 1;
+		}
+
+		&__background {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			left: 0;
+			top: 0;
+
+			&:after {
+				content: '';
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				left: 0;
+				top: 0;
+				background: red;
+			}
+		}
+	}
+
+	.slider-item {
+		min-height: 100vh;
+		background-size: cover;
+		background-position: center;
+		display: flex !important;
+		justify-content: center;
+		align-items: center;
+		@include large-screen-min {
+			min-height: calc(100vh - 30px);
+		}
+	}
+
+	&.landing-page {
+		padding: 0px;
+		min-height: 100vh;
+		margin: 0px;
+
+		.grid {
+			@include large-screen-min {
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			grid-row-start: 1;
+			grid-row-end: 3;
+			height: 100vh;
+
+			* {
+				color: $font-dark;
+			}
+
+			span {
+				z-index: 10;
+			}
+
+			.main-logo {
+				max-width: 250px;
+				margin-bottom: 30px;
+			}
+		}
+
+		.site {
+			height: 100vh;
+			padding: 0px;
+			position: relative;
+			@include large-screen-min {
+				height: 50vh;
+			}
+			text-align: center;
+			border-top: 10px solid;
+			overflow: hidden;
+
+			.site-slider {
+				padding: 0px;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				flex-wrap: wrap;
+				overflow: hidden;
+
+				.slide {
+					height: calc(100vh + 16px) !important;
+					width: calc(100% + 16px) !important;
+					margin-top: -8px;
+					margin-left: -8px;
+					background-size: cover;
+					background-position: center;
+					transition: $global-transition;
+					@include large-screen-min {
+						height: calc(50vh + 16px) !important;
+					}
+				}
+			}
+
+			.title {
+				position: relative;
+				padding: $universal-space-l;
+				min-height: 150px;
+				transition: $global-transition;
+				background: linear-gradient(
+					0deg,
+					transparent 0,
+					rgba(0, 0, 0, 0.8) 90%,
+					rgba(0, 0, 0, 0.8)
+				);
+
+				h4 {
+					margin: 0px;
+					position: relative;
+					z-index: 3;
+					color: white;
+				}
+			}
+
+			ul.links {
+				z-index: 3;
+				position: absolute;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				z-index: 3;
+				height: calc(100% - 30px);
+				width: calc(100% + 30px);
+				top: 15px;
+				transform: translate3D(0%, 120%, 0%);
+				transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0.2s;
+
+				li {
+					a {
+						color: white;
+					}
+
+					width: 100%;
+					transition: $global-transition;
+					transform: translate(0% 200px);
+					transform: translate3d(0%, 200px, 0%);
+					opacity: 0;
+
+					&:hover {
+						a {
+							color: inherit;
+						}
+					}
+				}
+			}
+
+			.icons {
+				position: absolute;
+				width: 100%;
+				z-index: 3;
+				bottom: 15px;
+				margin: 0px;
+
+				ul.col {
+					display: flex;
+					justify-content: center;
+					padding: 0px;
+
+					li {
+						padding: 10px;
+						margin: 5px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						background: rgba(0, 0, 0, 0.6);
+						box-shadow: $box-shadow;
+						border-radius: 200%;
+						transition: $global-transition;
+
+						a {
+							height: 25px;
+						}
+
+						&:hover {
+							background: rgba(0, 0, 0, 1);
+						}
+					}
+				}
+			}
+
+			&:after {
+				content: '';
+				width: 100%;
+				position: absolute;
+				height: 100%;
+				left: 0;
+				top: 0;
+				background: rgba(0, 0, 0, 0.1);
+				z-index: 2;
+				pointer-events: none;
+				transition: $global-transition;
+			}
+
+			&:hover {
+				.title {
+					opacity: 0;
+				}
+
+				.slide {
+					@include scale(1.05);
+				}
+
+				&:after {
+					background: rgba(0, 0, 0, 0.8);
+				}
+
+				ul.links {
+					transform: translate3D(0%, 0%, 0%);
+
+					li {
+						transform: translate(0% 0%);
+						transform: translate3d(0%, 0%, 0);
+						opacity: 1;
+						@include scale(1.1);
+						@for $i from 1 through 10 {
+							&:nth-child(#{$i}) {
+								transition-delay: 0.1s * $i;
+								z-index: 1 * $i;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		&:after {
+			display: none;
+		}
+	}
+}
+
+.background-icon {
+	position: absolute;
+	top: -120%;
+	left: -150%;
+	height: 275%;
+	width: 300%;
+	z-index: -1;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+.has-full-width-search {
+	.hero {
+		.container-fluid.max-width-container {
+			@include large-screen-min {
+				padding-top: $universal-space-l;
+			}
+		}
+	}
+}
+
+main#main > .hero {
+	margin-bottom: -30px;
+	@include large-screen-min {
+		margin-bottom: -60px;
+	}
+}

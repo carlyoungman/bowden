@@ -1,0 +1,72 @@
+.hover-effect {
+	padding: 5px;
+	border-radius: $border-radius;
+
+	&.icon-email {
+		background: $email;
+		fill: darken($email, 30%);
+	}
+
+	&.icon-linkedin {
+		background: $linkedin;
+		fill: darken($linkedin, 10%);
+	}
+}
+
+.people {
+	.icon {
+		fill: #333;
+	}
+}
+
+.social-media-links {
+	display: flex;
+	flex-wrap: wrap;
+
+	li {
+		flex-basis: 0;
+		flex-grow: 1;
+		max-width: 80px;
+
+		.icon-button {
+			width: 50px;
+			height: 50px;
+
+			.icon {
+				fill: $brand-black;
+			}
+		}
+
+		&:hover {
+			cursor: pointer;
+
+			.icon {
+				fill: $brand-white;
+			}
+
+			&#linkedin {
+				.icon-button {
+					background: $linkedin;
+				}
+			}
+
+			&#instagram {
+				.icon-button {
+					background: $instagram;
+				}
+			}
+
+			&#twitter {
+				.icon-button {
+					background: $twitter;
+				}
+			}
+
+			&#facebook {
+				.icon-button {
+					background: $facebook;
+				}
+			}
+		}
+	}
+}

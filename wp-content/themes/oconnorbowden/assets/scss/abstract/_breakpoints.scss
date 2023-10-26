@@ -1,0 +1,76 @@
+$small-screen: 576px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$xLarge-screen: 1200px;
+
+@mixin xSmall-screen-min {
+	@media screen and (min-width: #{$xSmall-screen}) {
+		@content;
+	}
+}
+
+@mixin small-screen-min {
+	@media screen and (min-width: #{$small-screen}) {
+		@content;
+	}
+}
+
+@mixin medium-screen-min {
+	@media screen and (min-width: #{$medium-screen}) {
+		@content;
+	}
+}
+
+@mixin large-screen-min {
+	@media screen and (min-width: #{$large-screen}) {
+		@content;
+	}
+}
+
+@mixin xLarge-screen-min {
+	@media screen and (min-width: #{$xLarge-screen}) {
+		@content;
+	}
+}
+
+@mixin xxLarge-screen-min {
+	@media screen and (min-width: #{$xLarge-screen}) {
+		@content;
+	}
+}
+
+@mixin xSmall-screen-max {
+	@media screen and (max-width: #{$xSmall-screen}) {
+		@content;
+	}
+}
+
+@mixin small-screen-max {
+	@media screen and (max-width: #{$small-screen}) {
+		@content;
+	}
+}
+
+@mixin medium-screen-max {
+	@media screen and (max-width: #{$medium-screen}) {
+		@content;
+	}
+}
+
+@mixin large-screen-max {
+	@media screen and (max-width: #{$large-screen}) {
+		@content;
+	}
+}
+
+@mixin xLarge-screen-max {
+	@media screen and (max-width: #{$xLarge-screen}) {
+		@content;
+	}
+}
+
+@mixin xxLarge-screen-max {
+	@media screen and (max-width: #{$xLarge-screen}) {
+		@content;
+	}
+}

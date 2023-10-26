@@ -1,0 +1,128 @@
+.slick-slider {
+	list-style: none;
+}
+
+.slick-list {
+	width: 100%;
+}
+
+.slider {
+	li {
+		height: 100vh;
+		background-size: cover;
+		background-position: center;
+	}
+}
+
+#slider-dots {
+	@include clearfix;
+	margin: 0;
+	padding: 0;
+
+	> li {
+		float: left;
+		margin: 0 15px 0 0;
+		padding: 0;
+		line-height: 100%;
+
+		&:after,
+		&:before {
+			display: none;
+		}
+
+		> button {
+			padding: 0;
+			width: 10px;
+			height: 10px;
+			text-indent: -999px;
+			text-align: left;
+			text-transform: capitalize;
+			overflow: hidden;
+			background-color: transparent;
+		}
+
+		&.slick-active {
+			> button {
+				background-color: $brand-blue;
+			}
+		}
+	}
+}
+
+.slick-dots {
+	text-align: center;
+	margin: $universal-space 0px;
+
+	li {
+		width: 25px;
+		height: 25px;
+		border-radius: 200%;
+		border: 1px solid $brand-gray;
+		display: inline-block;
+		margin-right: $universal-space;
+		margin-bottom: 0px;
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+
+		button {
+			display: none;
+		}
+
+		&:before {
+			display: none !important;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.slick-nav {
+	position: absolute;
+	z-index: 10;
+	@include vertical-align;
+	background: rgba(0, 0, 0, 0.1);
+
+	.icon {
+		fill: rgba(0, 0, 0, 0.5);
+	}
+
+	&.slick-prev {
+		left: $universal-space;
+		@include rotate(-90deg);
+	}
+
+	&.slick-next {
+		right: $universal-space;
+		@include rotate(90deg);
+	}
+}
+
+.office-slider {
+	li {
+		height: 500px;
+		background-size: cover;
+		background-position: center;
+	}
+}
+
+.office-slider-nav {
+	.draggable {
+		padding: 0px !important;
+	}
+
+	li {
+		height: 150px;
+		width: 200px;
+		background-size: cover;
+		background-position: center;
+		border: 3px solid white;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}

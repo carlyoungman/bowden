@@ -1,0 +1,36 @@
+.office-select {
+	li {
+		height: 40px;
+
+		p {
+			margin: 0;
+			text-align: center;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.magic-line-wrapper {
+	margin-bottom: $universal-space-l;
+	height: 5px;
+	position: relative;
+
+	#magic-line {
+		width: calc(20% - 30px);
+		height: 5px;
+		display: block;
+		top: 0;
+		margin: 0;
+		position: absolute;
+		background: $brand-gray;
+		transition: background 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+		@each $hoverColours, $value in $colours {
+			&.hover-#{$hoverColours} {
+				background: $value;
+			}
+		}
+	}
+}

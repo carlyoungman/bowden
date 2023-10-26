@@ -1,0 +1,67 @@
+.search-switch {
+	color: $font-dark;
+	font-size: 1em;
+	display: flex;
+	position: absolute;
+	z-index: 1;
+	align-content: flex-end;
+	@include large-screen-min {
+		top: 62px;
+	}
+
+	li {
+		width: 50%;
+		background: $brand-gray;
+
+		&.active {
+			color: $font-light;
+		}
+
+		span {
+			display: inline-block;
+			padding: 15px;
+			width: 100%;
+			text-align: center;
+			z-index: 3;
+			position: relative;
+		}
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	> span {
+		height: 100%;
+		width: 50%;
+		display: block;
+		position: absolute;
+		background: $brand-green;
+		z-index: 2;
+		transition: $global-transition;
+	}
+
+	&.left {
+		> span {
+			-webkit-transform: translateX(0%);
+			transform: translateX(0%);
+		}
+	}
+
+	&.right {
+		> span {
+			-webkit-transform: translateX(100%);
+			transform: translateX(100%);
+		}
+	}
+}
+
+@each $btnColours, $value in $colours {
+	.#{$btnColours} {
+		.search-switch {
+			> span {
+				background: $value;
+			}
+		}
+	}
+}

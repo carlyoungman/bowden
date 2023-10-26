@@ -1,0 +1,30 @@
+.partners {
+	.partner-logo {
+		padding: $universal-space-l;
+		border: 1px solid $brand-gray;
+		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		display: block;
+		margin-bottom: $universal-space-l;
+
+		img {
+			display: block;
+			max-width: 250px;
+			margin: 0 auto;
+			transition: $global-transition;
+			filter: grayscale(1);
+		}
+
+		&:hover {
+			img {
+				filter: grayscale(0);
+			}
+		}
+
+		&.active {
+			img {
+				filter: grayscale(0);
+			}
+		}
+	}
+}

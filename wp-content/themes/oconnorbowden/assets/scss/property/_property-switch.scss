@@ -1,0 +1,44 @@
+.switch-search-type {
+	text-align: center;
+	display: none;
+
+	.body {
+		padding: $universal-space-l $universal-space;
+	}
+
+	.footer {
+		p {
+			margin: 0;
+			color: $font-light;
+		}
+	}
+
+	.city-icon {
+		width: 75px;
+		height: 75px;
+		margin: 0 auto;
+		display: block;
+	}
+}
+
+.residential-lettings {
+	.switch-search-type {
+		&#sale-switch {
+			display: block !important;
+		}
+	}
+}
+
+.residential-sales {
+	.switch-search-type {
+		&#rental-switch {
+			display: block !important;
+		}
+	}
+}
+
+.yellow {
+	.switch-search-type {
+		opacity: 0;
+	}
+}

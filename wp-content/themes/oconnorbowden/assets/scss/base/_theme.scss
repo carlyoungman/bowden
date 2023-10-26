@@ -1,0 +1,126 @@
+@each $background, $value in $colours {
+	.#{$background} {
+		&::-webkit-scrollbar {
+			width: 15px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: $brand-gray;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: $value;
+		}
+
+		&::-webkit-scrollbar-thumb:hover {
+			background: darken($value, 15%);
+		}
+
+		.btn,
+		.button {
+			background: $value;
+
+			&:hover {
+				background: darken($value, 15%);
+			}
+		}
+
+		.testimonials {
+			background: $value;
+		}
+
+		header {
+			.singlesite-navigation {
+				background: $value;
+				fill: $value;
+			}
+		}
+
+		.mobile-navigation {
+			background: $value;
+		}
+
+		ul {
+			li {
+				&:before {
+					background: $value;
+				}
+			}
+		}
+
+		.map {
+			svg {
+				fill: $value;
+			}
+		}
+
+		.switch-search-type {
+			.footer {
+				background: $value;
+			}
+		}
+
+		@include large-screen-max {
+			#menu-secondary-navigation {
+				li {
+					background: $value;
+				}
+			}
+		}
+
+		.request-details {
+			background: $value;
+		}
+
+		header {
+			.singlesite-navigation {
+				background: $value;
+				fill: $value;
+			}
+		}
+
+		.property_actions {
+			ul {
+				li {
+					&.active {
+						background: $value;
+						border: 1px solid $value;
+						color: $font-light;
+					}
+
+					&:hover {
+						background: $value;
+						color: $font-light;
+					}
+
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+		.slick-dots {
+			li {
+				&.slick-active {
+					background: $value;
+					box-shadow: $box-shadow;
+				}
+			}
+		}
+
+		.custom-checkbox {
+			input:checked ~ .checkmark {
+				background: $value;
+			}
+		}
+
+		.hero.image .content:before {
+			border-top: 2px solid $value;
+			border-left: 2px solid $value;
+		}
+
+		.hero.image .content:after {
+			border-bottom: 2px solid $value;
+			border-right: 2px solid $value;
+		}
+	}
+}

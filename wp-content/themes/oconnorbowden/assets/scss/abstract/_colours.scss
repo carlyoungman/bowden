@@ -1,0 +1,40 @@
+$font-light: #fff;
+$font-dark: #444;
+$headline-dark: #333;
+
+$brand-white: #fff;
+$brand-black: #262626;
+
+$brand-gray: #e9e9eb;
+$brand-green: #a1c338;
+$brand-blue: #139ad7;
+$brand-blue: #139ad7;
+$brand-yellow: #ffd505;
+$brand-orange: #e8610c;
+$brand-purple: #582c83;
+$brand-red: #d03131;
+
+$background: #f4f7fa;
+$email: $brand-gray;
+$instagram: #800080;
+$facebook: #3b5999;
+$twitter: #42b6e7;
+$linkedin: #0274b3;
+
+$colours: (
+	white: $brand-white,
+	black: $brand-black,
+	gray: $brand-gray,
+	green: $brand-green,
+	blue: $brand-blue,
+	yellow: $brand-yellow,
+	orange: $brand-orange,
+	purple: $brand-purple,
+	red: $brand-red,
+);
+
+@each $background, $value in $colours {
+	.background--#{$background} {
+		background: $value !important;
+	}
+}

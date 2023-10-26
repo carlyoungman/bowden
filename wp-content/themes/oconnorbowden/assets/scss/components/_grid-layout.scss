@@ -1,0 +1,127 @@
+.grid-banner {
+	display: none;
+}
+
+.grid-layout {
+	position: relative;
+
+	.grid_title {
+		@include section-title;
+		@include large-screen-min {
+			position: absolute;
+			pointer-events: none;
+			display: block;
+			margin: 0 auto;
+			left: 0;
+			text-align: center;
+			right: 0;
+			color: $brand-white;
+			z-index: 5;
+			top: 50%;
+			transform: translateY(-50%);
+			max-width: 920px;
+		}
+
+		&:before {
+			border-top: 1px solid $brand-white;
+			border-left: 1px solid $brand-white;
+		}
+
+		&:after {
+			border-bottom: 1px solid $brand-white;
+			border-right: 1px solid $brand-white;
+		}
+	}
+
+	.grid-item {
+		min-height: calc(65vh);
+		background-size: cover;
+		background-position: center;
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		z-index: 0;
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			transition: $global-transition;
+			background: rgba(0, 0, 0, 0.6);
+		}
+
+		> * {
+			z-index: 1;
+		}
+
+		&:hover {
+			&:after {
+				background: rgba(0, 0, 0, 0.3);
+			}
+		}
+	}
+
+	section.property-banner {
+		display: none;
+	}
+
+	.grid-banner {
+		.property-banner {
+			height: 100%;
+			display: flex;
+			align-items: center;
+
+			&.font-light {
+				* {
+					color: $font-light;
+				}
+			}
+		}
+
+		.col-lg-3,
+		.col-sm-8 {
+			display: flex !important;
+			flex: 0 0 100%;
+			max-width: 100%;
+			width: 100%;
+
+			.banner-image {
+				min-height: 250px;
+			}
+
+			article {
+				padding: 0px $universal-space;
+
+				.headline {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.grid-layout {
+	.grid-banner {
+		display: block;
+
+		.property-banner {
+			display: none;
+		}
+	}
+
+	&.residential-lettings {
+		div.property-banner#banner-for-rent {
+			display: block;
+		}
+	}
+
+	&.residential-sales {
+		div.property-banner#banner-for-sale {
+			display: block;
+		}
+	}
+}

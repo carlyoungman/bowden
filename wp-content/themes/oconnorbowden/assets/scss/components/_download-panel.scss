@@ -1,0 +1,56 @@
+.download-panel {
+	&__list {
+		display: grid;
+		gap: $universal-space;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		@include medium-screen-min {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: $universal-space-l;
+		}
+		@include large-screen-min {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+
+	&__download {
+		border: 1px solid $brand-gray;
+		border-radius: $border-radius;
+		box-shadow: $box-shadow;
+		padding: $universal-space;
+	}
+
+	&__cloud {
+		width: $universal-space-xl;
+		fill: $brand-gray;
+	}
+
+	&__icon-wrap {
+		background: $brand-green;
+		border-radius: 100%;
+		padding: $universal-space-l;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 120px;
+		margin: 0 auto;
+	}
+
+	&__icon {
+		fill: $brand-white;
+	}
+
+	&__headline {
+		text-align: center;
+		margin-top: $universal-space;
+		padding-top: $universal-space;
+	}
+
+	&__content {
+		text-align: center;
+		margin-bottom: $universal-space-l;
+	}
+
+	.btn {
+		margin-bottom: 0;
+	}
+}

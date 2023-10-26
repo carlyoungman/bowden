@@ -1,0 +1,92 @@
+.property-search-panel {
+	box-shadow: $box-shadow;
+
+	.panel-heading {
+		padding: $universal-space-l $universal-space;
+		display: flex;
+		position: relative;
+
+		span {
+			color: $font-light;
+			display: block;
+			align-items: flex-start;
+		}
+
+		.icon-button {
+			align-items: flex-end;
+			right: $universal-space;
+		}
+	}
+
+	.panel-body {
+		position: relative;
+
+		.free-text-search {
+			background: $brand-white;
+			padding: $universal-space-l $universal-space;
+			text-transform: uppercase;
+			color: $font-dark;
+		}
+
+		.body-inner {
+			padding: $universal-space-l $universal-space;
+			background: $brand-gray;
+
+			.body-inner-inner {
+				padding: $universal-space-l $universal-space;
+				background: $brand-white;
+				border: 1px solid $brand-gray;
+				position: relative;
+
+				.search-switch {
+					position: relative;
+					top: 0px;
+				}
+			}
+		}
+	}
+}
+
+@each $btnColours, $value in $colours {
+	.#{$btnColours} {
+		.property-search-panel {
+			.panel-heading {
+				background: $value;
+			}
+
+			.search-option {
+				> span.active {
+					border-bottom: 5px solid $value;
+					background: $white;
+				}
+			}
+		}
+	}
+}
+
+.mobile-search {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 10;
+	transition: $global-transition;
+	transform: translate(0, -100vh);
+	transform: translate3d(0, -100vh, 0);
+
+	.search-switch {
+		width: 100%;
+	}
+}
+
+.show-search {
+	.mobile-search {
+		transform: translate(0%, 0px);
+		transform: translate3d(0%, 0, 0);
+	}
+}
+
+.residential-sales:not(.single-property) {
+	.marketing_flag-new-homes-for-sale {
+		display: none;
+	}
+}

@@ -1,0 +1,205 @@
+@mixin animate($animation, $duration, $repeat, $easing) {
+	-webkit-animation: $animation $duration $repeat $easing;
+	-moz-animation: $animation $duration $repeat $easing;
+	-ms-animation: $animation $duration $repeat $easing;
+	animation: $animation $duration $repeat $easing;
+}
+
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin clearfix {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin vertical-align {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	display: block;
+}
+
+@mixin center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin rotate($deg) {
+	transform: rotate(#{$deg});
+}
+
+@mixin scale($scale) {
+	transform: scale($scale);
+}
+
+@mixin translate($x, $y) {
+	transform: translate($x, $y);
+}
+
+@mixin skew($x, $y) {
+	transform: skew(#{$x}deg, #{$y}deg);
+}
+
+//SVG Mixin (for adding SVG as background image)
+@mixin svg($svg, $width, $height) {
+	background-image: url('/beta/images/svg/bg-svg/#{$svg}.svg');
+	background-repeat: no-repeat;
+	background-size: $width + px $height + px;
+	display: block;
+	height: $height + px;
+	width: $width + px;
+}
+
+@mixin fullScreenImage {
+	height: calc(95vh - 195px);
+	overflow: hidden;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+	&:after {
+		position: absolute;
+		width: calc(100% + 50px);
+		height: calc(100% + 50px);
+		left: -25px;
+		top: -25px;
+		background: inherit;
+		box-shadow: inset 0 0 0 3000px rgba(0, 0, 0, 0.2);
+		filter: blur(5px);
+		content: '';
+	}
+}
+
+@mixin formStyle {
+	position: relative;
+	border: 0;
+	border-bottom: 1px solid $brand-gray;
+	width: 100%;
+	max-width: 100%;
+	padding: $universal-space-l $universal-space;
+	color: $font-dark;
+	font-size: 1em;
+	border-radius: 0;
+	transition: $link-transition;
+
+	&:active {
+		border-bottom: 1px solid $brand-black;
+	}
+
+	&:hover {
+		border-bottom: 1px solid $brand-black;
+	}
+}
+
+@mixin formBtn {
+	text-align: center;
+	background: #333;
+	padding: $universal-space $universal-space-l;
+	margin: $universal-space 0;
+	transition: $global-transition;
+	box-shadow: $box-shadow;
+	text-transform: capitalize;
+	width: 100%;
+	max-width: 100%;
+	color: $font-light;
+	flex-basis: 0;
+	flex-grow: 1;
+	min-height: 60px;
+	appearance: none;
+	border: 0;
+	display: block;
+	&:hover {
+		background: $brand-black;
+		color: $font-light;
+		cursor: pointer;
+	}
+}
+
+@mixin after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+}
+
+//Animate Mixins
+@mixin fadein() {
+	transform: translate(0, 15px);
+	transform: translate3d(0, 15px, 0);
+	transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+	opacity: 0;
+	position: relative;
+
+	&.loaded {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+@mixin section-title() {
+	margin: 0 0 $universal-space-xl;
+	padding: $universal-space-l;
+	position: relative;
+	text-align: center;
+	text-transform: capitalize;
+
+	&:before {
+		content: '';
+		width: 45%;
+		height: 70%;
+		position: absolute;
+		transition: $slow-transition;
+		left: 0;
+		top: 0;
+		border-top: 1px solid $brand-black;
+		border-left: 1px solid $brand-black;
+	}
+
+	&:after {
+		content: '';
+		width: 45%;
+		height: 50%;
+		position: absolute;
+		transition: $slow-transition;
+		right: 0;
+		bottom: 0;
+		border-bottom: 1px solid $brand-black;
+		border-right: 1px solid $brand-black;
+	}
+}
+
+.animate {
+	&:before {
+		width: 0px !important;
+		height: 0px !important;
+	}
+
+	&:after {
+		width: 0px !important;
+		height: 0px !important;
+	}
+}

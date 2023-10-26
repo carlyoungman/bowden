@@ -1,0 +1,17 @@
+.alert {
+	margin: $universal-space 0px;
+	padding: $universal-space;
+	box-shadow: $box-shadow;
+	text-align: center;
+	text-align: center;
+
+	&.alert-success {
+		background: $brand-green;
+		color: $brand-white;
+	}
+
+	&.alert-danger {
+		background: red;
+		color: $brand-white;
+	}
+}

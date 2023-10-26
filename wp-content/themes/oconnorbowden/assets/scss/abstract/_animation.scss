@@ -1,0 +1,106 @@
+.animate-trigger {
+	.animate-element {
+		transition: $slow-transition;
+		opacity: 0;
+		transform: translate(0%, 100%);
+		transform: translate3d(0%, 100%);
+		@include large-screen-min {
+			&.animate-moblie {
+				transform: translate(0%, 0%);
+				transform: translate3d(0%, 0%);
+			}
+
+			&.slide-left {
+				transform: translate(50%, 0%);
+				transform: translate3d(50%, 0%);
+			}
+
+			&.slide-right {
+				transform: translate(-50%, 0%);
+				transform: translate3d(-50%, 0%);
+			}
+
+			&.slide-up {
+				transform: translate(0%, 50%);
+				transform: translate3d(0%, 50%);
+			}
+
+			&.slide-down {
+				transform: translate(0%, -50%);
+				transform: translate3d(0%, -50%);
+			}
+
+			&.animate-middle {
+				transform: translate(0%, 100%);
+				transform: translate3d(0%, 100%);
+			}
+
+			&.party-box-animate {
+				transform: translate(0%, 0%);
+				transform: translate3d(0%, 0%);
+			}
+		}
+	}
+
+	&.animate {
+		.animate-element {
+			transform: translate(0%, 0%);
+			transform: translate3d(0%, 0%);
+			opacity: 1;
+			@include large-screen-min {
+				&.animate-middle {
+					@include vertical-align;
+				}
+
+				&.party-box-animate {
+					transform: translate(0%, 60%);
+					transform: translate3d(0%, 60%);
+				}
+			}
+		}
+	}
+}
+
+@-webkit-keyframes bounce {
+	0% {
+		top: 10px;
+		@include scale(0.6);
+	}
+
+	25%,
+	75% {
+		top: 15px;
+		@include scale(1);
+	}
+
+	50% {
+		top: 15px;
+		@include scale(1);
+	}
+
+	100% {
+		top: 10px;
+		@include scale(0.6);
+	}
+}
+
+.bounce {
+	animation-iteration-count: infinite;
+	animation-timing-function: ease;
+	animation-duration: 2s;
+	animation-name: bounce;
+}
+
+#main.loadin {
+	opacity: 0;
+	transform: translate(0px, -150px);
+	transform: translate3d(0px, -150px);
+	transition: $global-transition;
+
+	&.loaded {
+		opacity: 1;
+		transform: translate(0px, 0px);
+		transform: translate3d(0px, 0px);
+		margin-top: 0;
+	}
+}
